@@ -1,0 +1,338 @@
+@import './adjust.css';
+@import 'util/variables';
+@import 'util/placeholders';
+
+
+/* UTILITIES */
+.visually-hidden {   
+    height: 1px; 
+    overflow: hidden;
+    width: 1px;   
+    position: absolute;  
+    clip: rect(1px 1px 1px 1px); 
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+/* GENERAL */
+html {
+    font-size: 62.5%;
+}
+
+* {
+    font-size: 1.8rem;
+    @extend %barlow;
+}
+
+button {
+    border: none;
+    background-color: transparent;
+}
+
+header {
+    height: 53.6rem;
+    width: 100%;
+    background-image: url(../images/mobile/image-header.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* NAVBAR */
+
+.navbar {
+    height: 9rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+}
+
+.nav {
+    height: 30.5rem;
+    width: 89vw;
+    padding: 2.4rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: $neutral-white;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: -2.5rem;
+        right: 0rem;
+        border: 4rem solid #000;
+        border-color: transparent $neutral-white transparent transparent;
+    }
+
+    &__container {
+        height: 0;
+        position: absolute;
+        top: 10.5rem;
+        right: 2.5rem;
+        z-index: 1;
+        display: none;
+    }
+
+    &__link {
+        text-decoration: none;
+        color: $neutral-grayblue--dark;
+        font-size: 2rem;
+
+        &--contact {
+            padding: 1.9rem 2.9rem;
+            color: $neutral-blue--desat;
+            background-color: $primary-yellow;
+            border-radius: 3rem;
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 1.5rem;
+            @extend %fraunces-bold;
+        }
+    }
+}
+
+/* HERO */
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+
+    &__heading {
+        padding-top: 5.3rem;
+        padding-bottom: 4.7rem;
+        color: $neutral-white;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: .5rem;
+        font-size: 4rem;
+        @extend %fraunces-black;
+    }
+}
+
+/* ABOUT */
+
+.about {
+    &__infocard {
+        height: 43.5rem;
+        padding: 0rem 6%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__imgcard {
+        height: 31rem;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        &--egg {
+            background-image: url(../images/mobile/image-transform.jpg);
+        }
+
+        &--cup {
+            background-image: url(../images/mobile/image-stand-out.jpg);
+        }
+    }
+
+    &__heading {
+        padding-top: 6.35rem;
+        color: $neutral-blue--desat;
+        text-align: center;
+        font-size: 3.2rem;
+        @extend %fraunces-black;
+    }
+
+    &__p {
+        padding-top: 2.3rem;
+        line-height: 3rem;
+        color: $neutral-grayblue--dark;
+        text-align: center;
+    }
+
+    &__link {
+        margin-top: 3.35rem;
+        color: $neutral-blue--desat;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-size: 1.6rem;
+        @extend %fraunces-black;
+    }
+
+    &__highlight {
+        height: .9rem;
+        width: 12.9rem;
+        position: relative;
+        top: -.7rem;
+        z-index: -1;
+        border-radius: 1rem;
+        opacity: .25;
+
+        &--yellow {
+            background-color: $primary-yellow;
+        }
+
+        &--red {
+            background-color: $primary-red;
+        }
+    }
+}
+
+/* SERVICES */
+
+.services {
+    &__card {
+        height: 60rem;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        &--cherry {
+            color: $primary-cyan;
+            background-image: url(../images/mobile/image-graphic-design.jpg);
+        }
+
+        &--orange {
+            color: $primary-blue;
+            background-image: url(../images/mobile/image-photography.jpg);
+        }
+    }
+
+    &__text {
+        margin: 0 auto;
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+    }
+
+    &__heading {
+        margin-top: 39.9rem;
+        text-align: center;
+        text-transform: capitalize;
+        font-size: 2.8rem;
+        @extend %fraunces-black;
+    }
+
+    &__p {
+        margin-top: 2.85rem;
+        line-height: 2.65rem;
+        text-align: center;
+        font-size: 1.6rem;
+    }
+}
+
+/* TESTIMONIALS */
+
+.testimonials {
+    & * {
+        text-align: center;
+    }
+
+    &__heading {
+        margin: 6.4rem 0;
+        color: $neutral-grayblue;
+        letter-spacing: .35rem;
+        text-transform: uppercase;
+        font-size: 1.6rem;
+        @extend %fraunces-black;
+    }
+}
+
+.testimonial {
+    width: 89%;
+    margin: 0 auto;
+    margin-bottom: 6.7rem;
+
+    &__img {
+        height: 7.2rem;
+        border-radius: 5rem;
+    }
+
+    &__quote {
+        margin-top: 2.85rem;
+        line-height: 3.15rem;
+        color: $neutral-blue--dark;
+    }
+
+    &__name {
+        margin-top: 3.25rem;
+        color: $neutral-blue--desat;
+        @extend %fraunces-black;
+    }
+
+    &__position {
+        margin-top: 1.2rem;
+        color: $neutral-grayblue;
+        font-size: 1.45rem;
+    }
+}
+
+/* GALLERY */
+.gallery {
+    height: 100vw;
+    display: flex;
+    flex-flow: row wrap;
+
+    &__img {
+        height: 50vw;
+        width: 50vw;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        &--bottles {
+            background-image: url(../images/mobile/image-gallery-milkbottles.jpg);
+        }
+
+        &--orange {
+            background-image: url(../images/mobile/image-gallery-orange.jpg);
+        }
+
+        &--cone {
+            background-image: url(../images/mobile/image-gallery-cone.jpg);
+        }
+
+        &--sugar {
+            background-image: url(../images/mobile/image-gallery-sugar-cubes.jpg);
+        }
+    }
+}
+
+.footer {
+    height: 35rem;
+    background-color: $primary-lightcyan;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__logo {
+        margin-top: 6.85rem;
+        transform: scale(1.4);
+
+        & > path {
+            fill: $primary-cyan--logo;
+        }
+    }
+
+    &__nav {
+        width: 34rem;
+        margin-top: 4.6rem;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    &__navlink {
+        text-decoration: none;
+        color: $primary-darkcyan;
+    }
+
+    &__icons {
+        margin-top: 8.9rem;
+        display: flex;
+        width: 16rem;
+        justify-content: space-between;
+    }
+}
